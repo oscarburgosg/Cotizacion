@@ -1,0 +1,171 @@
+/********************************/
+.ingreso{
+	margin: 25% auto;
+    width: 50%;
+	border:#675fd6 solid 1px;
+	padding:5px 10px;
+
+	background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.ingreso .box_ingreso{
+	float:left;
+	width: 100%;
+	margin:5px 0;
+}
+
+.ingreso .box_ingreso label{
+	float:left;
+	width:40%;
+	margin:5px 0;
+}
+
+.ingreso .box_ingreso .btn{
+	float:right;
+}
+
+
+.cabecera{
+	background: #F5F5F5;
+}
+
+.cabecera th,
+.cabecera td{
+	width:33%!important;
+}
+
+
+
+.drag-drop {
+    display: inline-block;
+    width: 100%;
+}
+
+.drag-drop.can-drop { 
+	background-color: #4e4; 
+}
+
+
+.detalle_equipo .list-group-item table{
+	display: none;
+}
+
+.sortable .list-group-item{
+	padding:0;
+	border:0;
+}
+
+.sortable .list-group-item span{
+	display: none;
+}
+
+.sortable .list-group-item table{
+	margin:0;
+}
+
+.sortable .list-group-item table th,
+.sortable .list-group-item table td{
+	width: 33% !important;
+}
+
+.list-group-item.draggable.drag-drop.ui-draggable.ui-sortable-placeholder{
+	border:dashed 1px!important;
+	min-height:50px;
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+	        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.droppable { 
+	float: left; 
+	width: 150px; 
+	height: 150px; 
+	padding: 0.5em; 
+	float: left; 
+}
+
+.draggable { 
+	width: 100%; 
+	height: auto; 
+	cursor: hand; 
+	cursor: pointer; 
+}
+
+.sortable { 
+    cursor: pointer;
+    float: left;
+    min-height: 40px;
+    width: 100%;
+}
+
+.sortable .ui-sortable-placeholder{
+	border:#FFF solid 1px!important;
+	visibility: visible!important;
+}
+
+.lista.agregar_nuevo{
+	position: relative;
+}
+
+.lista.agregar_nuevo .btn{
+	position: absolute;
+	top: 29px;
+	right:16px;
+}
+
+.lista_repuestos .list-group{
+	margin: 0 0 5px;
+}
+.lista_repuestos .list-group-item{
+	padding: 0;
+	position: relative;
+	height: 33px;
+    margin: 0 0 10px;
+}
+
+.lista_repuestos .list-group-item .btn{
+	right:0;
+    top:0;
+    position: absolute;
+}
+
+.lista_repuestos .list-group-item div p{
+	margin:0;
+	color:#333;
+}
+
+.lista_repuestos .panel{
+	margin-bottom: 0;
+}
+
+/******** buscador **************/
+.buscador .input-group-btn > .btn{
+	height:37px;
+}
+
+.list-group.lista_27{
+	margin:0;
+}
+
+.lista_27 .list-group-item{
+	padding: 5px 15px;
+}
+
+.lista_27 .form-control {
+	height: 24px;
+	padding: 1px 12px;
+}
+
+.lista_27 .btn{
+	padding:5px;
+	color:#efefef;
+}
+
+.observaciones .form-control{
+	padding:1px 10px;
+	height:23px;
+}

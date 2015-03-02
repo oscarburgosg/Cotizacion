@@ -1,0 +1,242 @@
+
+
+/*************** table ******************/
+.content_tabla{
+    height: auto;
+    overflow: auto;
+    background: #FFF;
+    color:#333;
+    border-top: 3px solid #648d93;
+}
+
+
+.content_tabla table td{
+	border-color:#ccc;
+	text-align: left;
+	padding: 1px 5px;
+}
+
+.content_tabla .head td{
+	background: none repeat scroll 0 0 #f7f7f7;
+    color: #648d93;
+    font-family: "Oswald",sans-serif;
+    font-weight: 100;
+    padding: 1px 3px;
+    text-transform: uppercase;
+}
+
+.content_tabla td .btn{
+	float:none;
+	margin:0 auto;
+}
+
+.content_tabla .glyphicon{
+	background: none repeat scroll 0 0 #333;
+    border-radius: 3px;
+    color: #c3d118;
+    padding: 5px;
+}
+
+.box_panel_recursos h1{
+	border-bottom: #675fd6 solid 5px;
+	text-transform: uppercase;
+	color:#FFF;
+	font-size: 16px;
+	margin:0 0 15px;
+}
+
+.box_panel_recursos table{
+	width:100%;
+	border:#2F2933 solid;
+	border-width: 0 0 1px 1px;
+}
+
+.box_panel_recursostable td{
+	padding:2px;
+	border:#2F2933 solid;
+	border-width: 1px 1px 0 0;
+	color:#FFF;
+}
+
+
+
+
+/********************************/
+.ingreso{
+	margin: 25% auto;
+    width: 50%;
+	border:#675fd6 solid 1px;
+	padding:5px 10px;
+
+	background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.ingreso .box_ingreso{
+	float:left;
+	width: 100%;
+	margin:5px 0;
+}
+
+.ingreso .box_ingreso label{
+	float:left;
+	width:40%;
+	margin:5px 0;
+}
+
+.ingreso .box_ingreso .btn{
+	float:right;
+}
+
+/********** lista_tareas *******/
+.lista_tareas{
+	
+}
+
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    height: auto;
+    padding: 1px;
+}
+
+
+/* Media queries */
+
+
+   .lista_pequena br{
+  	display:block;
+  }
+
+
+
+
+/*MEDIAQUERY*/
+@media (max-width: 1200px) and (min-width: 991px){
+	html{
+		border-left: orange solid 10px;
+	}
+}
+
+@media (max-width: 990px) {
+
+	.lista_pequena br{
+		display:none;
+	}
+
+	html{
+		border-left: green solid 10px;
+	}
+}
+
+@media (max-width: 769px) {
+	html{
+		border-left: red solid 10px;
+	}
+
+}
+
+@media (max-width: 640px) {
+	html{
+		border-left: yellow solid 10px;
+	}
+}
+
+@media (max-width: 568px) {
+	html{
+		border-left: purple solid 10px;
+	}
+}
+@media (max-width: 480px) {
+	html{
+		border-left: lightblue solid 10px;
+	}
+
+}
+@media (max-width: 450px) {
+	html{
+		border-left: red solid 10px;
+	}
+}
+
+
+/******** buscador **************/
+.buscador{
+}
+
+.buscador .input-group-btn > .btn{
+	padding:6px 12px 7px;
+}
+
+.asociar, .mostrar {
+    display: none;
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.resultados{
+	margin:5px 0;
+}
+
+.resultados .list-group-item{
+	padding:0;
+	position: relative;
+	padding:3px 15px;
+	height:34px;
+}
+
+.resultados .list-group-item .btn{
+	position: absolute;
+	top:0;
+	right:0;
+}
+
+.diagnostico .head{
+	margin:0 0 10px;
+}
+
+.lista_tres{
+}
+
+.lista_tres td{
+	width:33%;
+}
+
+.btn.simular{
+}
+
+.botones{
+	float:right;
+}
+
+.input-group.title .form-control{
+	border: 0 none;
+    color: #1d1c2a;
+    font-family: "PT Sans Narrow",sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 0;
+}
+
+.input-group.title .input-group-addon{
+	border:1px solid #ccc;
+}
+
+
+.barras{
+	border:#ccc solid;
+	border-width: 1px 0;
+	float: left;
+	width: 100%;
+	padding:0;
+	margin-bottom:5px;
+}
+
+
+

@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+		<title>Salfa Cotizacíón</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- BOOTSTRAP STYLES-->
+		<link href="assets/css/bootstrap.css" rel="stylesheet" />
+		<!-- FONTAWESOME STYLES-->
+		<link href="assets/css/font-awesome.css" rel="stylesheet" />
+		<!-- CUSTOM STYLES-->
+		<link href="assets/css/custom.css" rel="stylesheet" />
+
+		<!-- TABLE STYLES-->
+    	<link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+    	<!-- PANELES -->
+		<link rel="stylesheet" type="text/css" href="css/paneles.css">
+		<link rel="stylesheet" type="text/css" href="css/comun.css">
+
+		<script language="javascript">
+			function login(id){
+			
+			var login = $("#login");
+			var contenido = $("#contenido_a_mostrar");
+			
+			login.css("display",(login.css("display")=="none"?"block":"none"));
+			contenido.css("display",(contenido.css("display")=="none"?"block":"none"));
+			}
+
+			function ver_detalle(id){
+			
+			var boton_ver = $("#boton_ver");
+			var detalle = $("#detalle_ot");
+			var boton_cerrar = $("#boton_cerrar");
+			var contenido = $("#contenido_a_mostrar");
+			
+			boton_ver.css("display",(boton_ver.css("display")=="none"?"block":"block"));
+			detalle.css("display",(detalle.css("display")=="none"?"block":"none"));
+			boton_cerrar.css("display",(boton_cerrar.css("display")=="none"?"block":"block"));
+			contenido.css("display",(contenido.css("display")=="none"?"block":"none"));
+			}
+
+			function cerrar_detalle(id){
+			
+			var boton_cerrar = $("#boton_cerrar");
+			var detalle = $("#detalle_ot");
+			var contenido = $("#contenido_a_mostrar");
+			
+			boton_cerrar.css("display",(boton_cerrar.css("display")=="none"?"block":"none"));
+			detalle.css("display",(detalle.css("display")=="none"?"block":"none"));
+			contenido.css("display",(contenido.css("display")=="none"?"block":"none"));
+			}
+
+			function detalle_revision(id){
+			
+			var boton_ver = $("#boton_ver");
+			var detalle_revision = $("#detalle_revision");
+			var boton_cerrar = $("#boton_cerrar");
+			var contenido = $("#contenido_a_mostrar");
+			
+			boton_ver.css("display",(boton_ver.css("display")=="none"?"block":"block"));
+			detalle_revision.css("display",(detalle_revision.css("display")=="none"?"block":"none"));
+			boton_cerrar.css("display",(boton_cerrar.css("display")=="none"?"block":"block"));
+			contenido.css("display",(contenido.css("display")=="none"?"block":"none"));
+			}
+
+			function cerrar_revision(id){
+			
+			var cerrar_revision = $("#cerrar_revision");
+			var detalle_revision = $("#detalle_revision");
+			var contenido = $("#contenido_a_mostrar");
+			
+			cerrar_revision.css("display",(cerrar_revision.css("display")=="none"?"block":"none"));
+			detalle_revision.css("display",(detalle_revision.css("display")=="none"?"block":"none"));
+			contenido.css("display",(contenido.css("display")=="none"?"block":"none"));
+			}
+			
+		</script>
+
+</head>
+<body>
+		
+    <div id="login" class="ingreso" style="display:none;">
+		<div class="box_ingreso">
+			<select class="form-control">
+			  <option>Norman Riquelme</option>
+			  <option>Oscar Burgos</option>
+			  <option>Jose Caro</option>
+			</select>
+		</div>
+		<div class="box_ingreso">
+			<input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+		</div>
+		<div class="box_ingreso">
+			<button type="button" class="btn btn-default" onclick="login('contenido_a_mostrar')">INGRESAR</button>
+		</div>
+		<div class="clear"></div>
+	</div>
+        
+    <div id="contenido_a_mostrar" class="lista_tareas" style="display:none;">
+    	
+		<div class="panel panel-default no-border no-bg">
+			<div class="panel-heading">CASOS</div>
+			<div class="panel panel-default no-bg no-border">
+				<div class="panel-body">
+					<div class="panel panel-default no-bg">
+						<div class="panel-body no-padding">
+						  	<ul id="myTab" class="nav nav-tabs">
+							   <li class="active">
+							      <a href="#uno" data-toggle="tab">
+							         Casos por cotizar
+							      </a>
+							   </li>
+							   <li>
+							   		<a href="#dos" data-toggle="tab">
+								   	Cotizaciones Enviadas
+								   </a>
+							   </li>
+							   <li>
+							   		<a href="#tres" data-toggle="tab">
+								   	Cotizaciones Aprobadas
+								   </a>
+							   </li>
+							</ul>
+							<div id="myTabContent" class="tab-content">
+							   <div class="tab-pane fade in active" id="uno">
+								    <div class="content_tabla">
+										<table cellspacing="0" width="100%" border="1">
+											<tr class="head">
+												<th>Diagnostico</th>
+												<th>OT</th>
+												<th>Cliente</th>
+												<th>Patente / VIN</th>
+												<th>N° Interno</th>
+												<th>Estado</th>
+												<th></th>
+											</tr>
+											<tr class="">
+												<td class="cell">2345</td>
+												<td class="cell">24557</td>
+												<td class="cell">BSA S.A.</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">132</td>
+												<td class="cell">
+													PEND
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">cotizar</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2346</td>
+												<td class="cell">08:48 hrs</td>
+
+												<td class="cell">Transportes Andinos</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">39</td>
+												<td class="cell">
+													PEND
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2347</td>
+												<td class="cell">12:16 hrs</td>
+
+												<td class="cell">ICV</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													REV
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2348</td>
+												<td class="cell">11:54 hrs</td>
+
+												<td class="cell">Municipalidad de Talca</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">46</td>
+												<td class="cell">
+													EN PROD
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2349</td>
+												<td class="cell">08:48 hrs</td>
+
+												<td class="cell">ASFALMIX SA</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">111</td>
+												<td class="cell">
+													PEND
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2350</td>
+												<td class="cell">12:16 hrs</td>
+
+												<td class="cell">Constructora Rivera Ltda</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													REV
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2351</td>
+												<td class="cell">11:54 hrs</td>
+
+												<td class="cell">Canteras Lonco S.A.</td>
+												<td class="cell">4567RG453D</td>
+												<td class="cell">98</td>
+												<td class="cell">
+													REV
+												</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+										</table>								
+									</div>
+							   </div>
+							   <div class="tab-pane fade" id="dos">
+							      	<div class="content_tabla">
+										<table cellspacing="0" width="100%" border="1">
+											<tr class="head">
+												<th>Cotización</th>
+												<th>OT</th>
+												<th>Fecha</th>
+												<th>Cliente</th>
+												<th>Patente / VIN</th>
+												<th>N° Interno</th>
+												<th></th>
+
+											</tr>
+											<tr class="">
+												<td class="cell">2345</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">BSA S.A.</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">132</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2346</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">Transportes Andinos</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">39</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+												
+											</tr>
+											<tr class="">
+												<td class="cell">2347</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">ICV</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2348</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">Municipalidad de Talca</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">46</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2349</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+
+												<td class="cell">ASFALMIX SA</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">111</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2350</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+
+												<td class="cell">Constructora Rivera Ltda</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2351</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">Canteras Lonco S.A.</td>
+												<td class="cell">4567RG453D</td>
+												<td class="cell">98</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+										</table>								
+									</div>
+							   </div>
+							   <div class="tab-pane fade" id="tres">
+							    	<div class="content_tabla">
+										<table cellspacing="0" width="100%" border="1">
+											<tr class="head">
+												<th>Cotización</th>
+												<th>OT</th>
+												<th>Fecha</th>
+												<th>Fecha Aprob.</th>
+												<th>Cliente</th>
+												<th>Patente / VIN</th>
+												<th>N° Interno</th>
+												<th></th>
+											</tr>
+											<tr class="">
+												<td class="cell">2345</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+												<td class="cell">BSA S.A.</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">132</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="ver_detalle('detalle_ot')">VER</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2346</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+												<td class="cell">Transportes Andinos</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">39</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+												
+											</tr>
+											<tr class="">
+												<td class="cell">2347</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+												<td class="cell">ICV</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2348</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+												<td class="cell">Municipalidad de Talca</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">46</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2349</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+
+												<td class="cell">ASFALMIX SA</td>
+												<td class="cell">FG RR 34</td>
+												<td class="cell">111</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2350</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+
+												<td class="cell">Constructora Rivera Ltda</td>
+												<td class="cell">CD DC 54</td>
+												<td class="cell">--</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+											<tr class="">
+												<td class="cell">2351</td>
+												<td class="cell">24557</td>
+												<td class="cell">12/12</td>
+												<td class="cell">15/12</td>
+												<td class="cell">Canteras Lonco S.A.</td>
+												<td class="cell">4567RG453D</td>
+												<td class="cell">98</td>
+												<td class="cell">
+													<button id="boton_ver" type="button" class="btn btn-default" onclick="()">ver</button>
+												</td>
+											</tr>
+										</table>								
+									</div>
+							   </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="detalle_ot" style="display:block;">
+		<div class="panel panel-default no-border no-bg">
+			<div class="panel-heading no-border">5789 - ED 88 79 - ASFALMIX SA - 421
+				<button onclick="cerrar_detalle('detalle_ot')" class="btn btn-default pull-right" type="button">
+						<span class="glyphicon glyphicon-arrow-left"></span>
+				</button>
+				<div class="clear"></div>
+			</div>
+
+		  	<div class="panel-body bg">
+
+		  		<!-- datos cliente -->
+		  		<div class="panel panel-default usuario">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseCliente">	
+		                    	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+		                    	Datos Cliente / Contacto
+		                    </a>
+		                    <input class="pull-right" type="checkbox" value="">
+		                </h4>
+		            </div>
+		            <div id="collapseCliente" class="panel-collapse collapse in">
+		                <div class="panel-body">
+						  	<div class="row">
+							<div class="col-md-12 datos_standar">
+								<div class="row">
+									<div class="col-md-5 col-xs-6">
+										<table>
+											<tr>
+												<td>Cliente</td>
+												<td>: <strong>ANTARESMAQUINARIAS LTDA</strong></td>
+											</tr>
+											<tr>
+												<td>Contacto</td>
+												<td>: <strong>Jose Caro</strong></td>
+											</tr>
+											<tr>
+												<td>Mail</td>
+												<td>: <strong>jcaro@antaresmaquinarias.cl</strong></td>
+											</tr>
+											<tr>
+												<td>Fono</td>
+												<td>: <strong>+ 56 9 222 478 987</strong></td>
+											</tr>
+											<tr>
+												<td>Categoría</td>
+												<td>: <strong>Platino</strong></td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-md-5 col-xs-6">
+										<table>
+											<tr>
+												<td>N° OT / Tipo</td>
+												<td>: <strong>785490 / Mantención</strong></td>
+											</tr>
+											<tr>
+												<td>Fecha / Hora recepción</td>
+												<td>: <strong>16/09/2014 / 11:53</strong></td>
+											</tr>
+											<tr>
+												<td>Kilometros / Horas</td>
+												<td>: <strong>27532 / 943</strong></td>
+											</tr>
+											<tr>
+												<td>Asesor Responsable</td>
+												<td>: <strong>Oscar Burgos</strong></td>
+											</tr>
+										</table>
+									</div>
+									<div class="col-md-2 col-xs-12 lista_pequena" >
+										<table>
+											<tr>
+												<td>Urgente</td>
+												<td>: <strong>SI</strong></td>
+											</tr>
+											<tr>
+												<td>Reingreso</td>
+												<td>: <strong>SI</strong></td>
+											</tr>
+											<tr>
+												<td>Garantía</td>
+												<td>: <strong>NO</strong></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+							</div>
+						 </div>
+		            </div>
+		        </div>
+				
+				<!-- datos pagador -->
+		        <div class="panel panel-default usuario">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapsePagador">
+		                    	<span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+		                    	Datos Pagador
+		                    </a>
+		                    <input class="pull-right" type="checkbox" value="">
+		                </h4>
+		            </div>
+		            <div id="collapsePagador" class="panel-collapse collapse in">
+		                <div class="panel-body">
+
+							<script>
+								function asociar_pagador(id){
+			
+								var asociar = $("#asociar");
+								var actual = $("#actual");
+								
+								asociar.css("display",(asociar.css("display")=="none"?"block":"none"));
+								actual.css("display",(actual.css("display")=="none"?"block":"none"));
+								}
+
+							</script>
+							
+							<div class="row">
+								<div id="" class="detalle_cliente">
+
+									<div id="asociar" class="asociar" style="display:none;">
+										<div class="col-md-12">
+											<label for="subject">ASOCIAR CLIENTE</label>
+										</div>
+							            
+							            <div class="col-md-12">
+							                <div class="buscador" style="visibility: visible;">
+												<div class="input-group box_buscador">
+											      <input type="text" class="form-control" placeholder="Buscar">
+											      <span class="input-group-btn">
+											        <button data-target="#detalle_equipo" data-toggle="collapse" class="btn btn-default large" type="button">
+											        	<span class="glyphicon glyphicon-search"></span>
+											        </button>
+											      </span>
+											    </div>
+											</div>
+										</div>
+										<div class="col-md-12">
+											<div class="resultados collapse" id="detalle_equipo">
+												<a href="#" class="list-group-item drag-drop">
+											    	ANTARESMAQUINARIAS LTDA
+											    	<button type="button" class="btn btn-default pull-right" id="" onclick="asociar_pagador()">
+														ASOCIAR
+										        	</button>
+											    </a>
+											  	<a href="#" class="list-group-item drag-drop">
+											    	CANTERAS LONCO S.A.
+											    	<button type="button" class="btn btn-default pull-right" id="" onclick="asociar_pagador()">
+														ASOCIAR
+										        	</button>
+											    </a>
+											    <a href="#" class="list-group-item drag-drop">
+											    	CRISTIAN MENDOZA SANGUEZA
+											    	<button type="button" class="btn btn-default pull-right" id="" onclick="asociar_pagador()">
+														ASOCIAR
+										        	</button>
+											    </a>
+											    <a href="#" class="list-group-item drag-drop">
+											    	ANTARESMAQUINARIAS LTDA
+											    	<button type="button" class="btn btn-default pull-right" id="" onclick="asociar_pagador()">
+														ASOCIAR
+										        	</button>
+											    </a>  
+											</div>
+										</div>
+									</div>
+
+									<div id="actual" class="actual">
+
+										<div class="col-md-5 col-xs-5">
+											<table>
+												<tr>
+													<td>Nombre</td>
+													<td>: <strong>ANTARESMAQUINARIAS LTDA</strong></td>
+												</tr>
+												<tr>
+													<td>RUT</td>
+													<td>: <strong>69.325.245-7</strong></td>
+												</tr>
+												<tr>
+													<td>Contacto</td>
+													<td>: <strong>Jose Caro</strong></td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-6 col-xs-6">
+											<table>
+												<tr>
+													<td>Mail</td>
+													<td>: <strong>jcaro@antaresmaquinarias.cl</strong></td>
+												</tr>
+												<tr>
+													<td>Fono</td>
+													<td>: <strong>+ 56 9 222 478 987</strong></td>
+												</tr>
+												<tr>
+													<td>Categoría</td>
+													<td>: <strong>Platino</strong></td>
+												</tr>
+											</table>
+										</div>
+										<div class="col-md-1 col-xs-1">
+								        	<button title="Detalle Cliente" type="button" class="pull-right btn btn-default btn-md" onclick="asociar_pagador()">
+												<span class="glyphicon glyphicon-arrow-right"></span>
+												<span class="glyphicon glyphicon-user"></span>
+											</button>
+										</div>
+
+									</div>
+									<div class="clear"></div>
+								</div>
+							</div>
+
+						</div>
+		            </div>
+		        </div>
+
+				<div class="clear"></div>
+				
+				<!-- antecedentes -->
+				<div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseAntecedentes">
+		                    	<span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+		                    	Antecedentes
+		                    </a>
+		                </h4>
+		            </div>
+		            <div id="collapseAntecedentes" class="panel-collapse collapse in">
+		                <div class="panel-body">
+		                	<div class="row">
+							 	<div class="col-md-12 col-xs-12">
+							 		<div class="texto_ingresado">
+							 			<textarea class="" name="" id="" cols="30" rows="10" place>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+							 			</textarea>
+							 		</div>
+								</div>
+							</div>
+						</div>
+		            </div>
+		        </div>
+
+				<!-- DIAGNOSTICO -->
+				<div class="panel panel-default diagnostico">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_01" aria-expanded="false" aria-controls="collapseThree">
+					          <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+					          Diagnóstico
+					        </a>
+					    </h4>
+					</div>
+					<div id="collapse_01" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingThree">
+						<div class="panel-body">
+
+								<div class="head">
+									<div class="row">
+										<div class="col-md-12 col-xs-12 box_destacar">
+											<div class="col-md-4 col-xs-4 l">
+												  Sistema : <strong>Diferenciales</strong>
+											</div>
+											<div class="col-md-4 col-xs-4 ">
+												  Conjunto : <strong>Diferencial Intermedio</strong>
+											</div>
+											<div class="col-md-4 col-xs-4 r">
+												  Parte : <strong>Carcasa</strong>
+											</div>
+						            	</div>
+						            	<div class="col-md-12 col-xs-12 destacar">
+											<div class="col-md-4 col-xs-4 l">
+												  <label for="">Falla</label>
+												  <div class="texto_ingresado">
+													  Lorem Ipsun
+												</div>
+											</div>
+											<div class="col-md-4 col-xs-4">
+												  <label for="">Causa</label>
+												  <div class="texto_ingresado">
+													  Lorem Ipsun dolor
+												</div>
+											</div>
+											<div class="col-md-4 col-xs-4 r">
+												  <label for="">Solución</label>
+												  <div class="texto_ingresado">
+													  Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
+												</div>
+											</div>
+										</div>
+										<div class="col-md-12 col-xs-12">
+											<label for="">Comentario :</label>
+											<div class="texto_ingresado">
+												Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+											</div>
+										</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+						            	<label for="">Operaciones</label><br>
+						            	<table width="100%" border="1">
+						            		<tr>
+						            			<th>Descripción</td>
+						            			<th>Horas</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Sacar Radiador camión</td>
+						            			<td>2hh</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Cambio empaquetadura Radiador</td>
+						            			<td>1hh</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Total</td>
+						            			<td><code>3hh</code></td>
+						            		</tr>
+						            	</table>
+									</div>
+									<div class="col-md-6">
+						            	<label for="">Repuestos</label><br>
+						            	<table width="100%" border="1">
+						            		<tr>
+						            			<th>Descripción</td>
+						            			<th>Numero Parte</td>
+						            			<th>Cantidad</td>
+						            			<th>Precio</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Empaquetadura Radiador</td>
+						            			<td>A742</td>
+						            			<td>1</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Empaquetadura Radiador</td>
+						            			<td>A742</td>
+						            			<td>1</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td colspan="3">Total</td>
+						            			<td>$80.000</td>
+						            		</tr>
+						            	</table>
+									</div>
+									<div class="clear"></div>
+									<div class="col-md-6">
+						            	<label for="">Materiales</label><br>
+						            	<table width="100%" border="1">
+						            		<tr>
+						            			<th>Descripción</td>
+						            			<th>Cantidad</td>
+						            			<th>Precio</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Aceite 15/50</td>
+						            			<td>1</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Grasa</td>
+						            			<td>1</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td colspan="2">Total</td>
+						            			<td>$80.000</td>
+						            		</tr>
+						            	</table>
+									</div>
+									<div class="col-md-6">
+						            	<label for="">Servicios de Terceros</label><br>
+						            	<table width="100%" border="1">
+						            		<tr>
+						            			<th>Servicio</td>
+						            			<th>Horas</td>
+						            			<th>Fecha Posible</td>
+						            			<th>Precio</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Jose Caro : Extracción de Perno</td>
+						            			<td>3</td>
+						            			<td>30/11/14 - 09:00 hrs</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td>Oscar Burgos : Extracción de Perno</td>
+						            			<td>3</td>
+						            			<td>30/11/14 - 09:00 hrs</td>
+						            			<td>$40.000</td>
+						            		</tr>
+						            		<tr>
+						            			<td colspan="3">Total</td>
+						            			<td>$80.000</td>
+						            		</tr>
+						            	</table>
+									</div>
+								</div>
+						  </div>
+					</div>
+				</div>
+					
+				<!-- observaciones -->
+				<div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseObservaciones">
+		                    	<span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+		                    	Observaciones
+		                    </a>
+		                </h4>
+		            </div>
+		            <div id="collapseObservaciones" class="panel-collapse collapse in">
+		                <div class="panel-body">
+					 	<div class="col-md-12 col-xs-12">
+					 		<div class="row">
+						 		<div class="texto_ingresado">
+						 			<textarea name="" id="" cols="30" rows="10" place>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+						 			</textarea>
+						 		</div>
+					 		</div>
+						</div>
+					</div>
+		            </div>
+		        </div>
+				
+				<!-- resumen -->
+		        <div class="panel panel-default">
+		            <div class="panel-heading">
+		                <h4 class="panel-title">
+		                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseResumen">
+		                    	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+		                    	Resumen
+		                    </a>
+		                </h4>
+		            </div>
+		            <div id="collapseResumen" class="panel-collapse collapse in">
+	                	<div class="panel-body">
+	                		<div class="row">
+						    	<div class="col-md-6 col-xs-6 lista_tres">
+					            	<table width="100%" border="1">
+					            		<tr>
+					            			<th>Resumen</td>
+					            			<th>Total</td>
+					            			<th>Descuento</td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total Repuestos</td>
+					            			<td>$99.999</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total Materiales</td>
+					            			<td>$99.999</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total Mano de Obra</td>
+					            			<td>$99.999</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total Servicios externos</td>
+					            			<td>$99.999</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total</td>
+					            			<td>$99.999</td>
+					            			<td></td>
+					            		</tr>
+					            	</table>
+								</div>
+								<div class="col-md-6 col-xs-6 lista_tres">
+					            	<table width="100%" border="1">
+					            		<tr>
+					            			<th>Adicionales</th>
+					            			<th></th>
+					            			<th></th>
+					            		</tr>
+					            		<tr>
+					            			<td>Kilometraje</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            			<td></td>
+					            		</tr>
+					            		<tr>
+					            			<td>Mov. y Peajes</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            			<td></td>
+					            		</tr>
+					            		<tr>
+					            			<td>Varios</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            			<td></td>
+					            		</tr>
+					            		<tr>
+					            			<td>Deducibles</td>
+					            			<td>
+					            				<input type="text" class="form-control" placeholder="Ingresar">
+					            			</td>
+					            			<td></td>
+					            		</tr>
+					            		<tr>
+					            			<td>Total</td>
+					            			<td>$999.999</td>
+					            			<td></td>
+					            		</tr>
+					            	</table>
+								</div>
+								<div class="clear"></div>
+								<div class="barras">
+									<div class="col-md-6 col-xs-6">
+									</div>	
+									<div class="col-md-6 col-xs-6">
+										Solicitar autorización para descuentos
+										<input class="pull-right" type="checkbox" value="">
+									</div>
+									<div class="col-md-6 col-xs-6">
+									</div>	
+									<div class="col-md-6 col-xs-6">
+										Mantener fecha precios cotización anterior
+										<input class="pull-right" type="checkbox" value="">
+									</div>
+								</div>
+								<div class="col-md-12 col-xs-12">
+									<div class="botones">
+										<button onclick="()" class="pull-right btn btn-default btn-md" type="button" title="Detalle Cliente">
+											IMPRIMIR
+										</button>
+
+										<button onclick="()" class="pull-right btn btn-default btn-md" type="button" title="Detalle Cliente">
+											ENVIAR
+										</button>
+									</div>
+									<div class="botones">
+										<button onclick="()" class="btn btn-default btn-md simular" type="button" title="Detalle Cliente">
+											SIMULAR COTIZACÍON
+										</button>
+									</div>
+								</div>
+							</div>
+					  	</div>
+					</div>
+		        </div>
+            </div>
+			<div class="clear"></div>
+		  </div>
+		</div>
+	</div>
+	
+	<script src="js/jquery-1.8.3.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.js"></script>
+	<script src="js/jquery_drag.js"></script>
+
+	<!-- JQUERY SCRIPTS 
+    	<script src="assets/js/jquery-1.10.2.js"></script>
+    -->
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+      <!-- CUSTOM SCRIPTS -->
+
+
+
+
+<!--
+	<script type="text/javascript">
+	$(document).ready(function()
+	    {
+	    $("#boton").click(function () {	 
+	        $('.box').toggleClass("esconder");
+	         });
+
+	    $("#ver").click(function () {
+	        $('.box').toggleClass("esconder");
+	         });
+
+	    });
+	</script>
+
+	<div class="box">
+		<input id="target" type="button" value="ESTE BOTÓN APARECE Y DESAPARECE"><br>
+		<input id="boton" type="button" value="esconder">
+	</div>
+
+	<div class="ver">
+		div contenido test
+		<input id="ver" type="button" value="mostrar">
+	</div>
+
+
+	<style>
+
+	.esconder{
+		border:red solid 1px;
+		display:none;
+	}
+
+	</style>
+-->
+
+</body>
+
+</html>
